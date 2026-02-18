@@ -40,12 +40,7 @@ def count_logs_by_level(logs):
 
 
 def filter_logs_by_level(logs, level):
-    final_logs = []
-    for el in logs:
-        if el["LEVEL"] == level:
-            final_logs.append(el)
-
-    return final_logs
+    return [el for el in logs if el["LEVEL"] == level]
 
 
 def display_log_counts(counts):
