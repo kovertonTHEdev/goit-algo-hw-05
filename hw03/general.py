@@ -2,7 +2,7 @@ import sys
 import os
 from collections import defaultdict
 
-ALLOWED_LVLS = ["INFO", "DEBUG", "WARNING", "ERROR"]
+ALLOWED_LVLS = {"INFO", "DEBUG", "WARNING", "ERROR"}
 
 
 def parse_log_line(raw_line):
@@ -26,7 +26,8 @@ def load_logs(file_path):
                 if good_logs is not None:
                     logs.append(good_logs)
     except PermissionError:
-        return "You don't have rights to open this file"
+        print("You don't have rights to open this file")
+        sys.exit(1)
     return logs
 
 
@@ -45,7 +46,7 @@ def filter_logs_by_level(logs, level):
 
 def display_log_counts(counts):
     print(f"{'Рівень логування':<20} | {'Кількість':<10}")
-    print("-" * 21 + "|" + "-" * 11)
+    print("-" * 20 + "|" + "-" * 10)
     for level, count in counts.items():
         print(f"{level:<20} | {count:<10}")
 
