@@ -53,7 +53,7 @@ def display_log_counts(counts: dict[str, int]) -> None:
         print(f"{level:<20} | {count:<10}")
 
 
-def main(file_path, users_lvl):
+def main(file_path: str, users_lvl: str | None) -> None:
     logs = load_logs(file_path)
     counts = count_logs_by_level(logs)
     display_log_counts(counts)
