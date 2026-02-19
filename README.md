@@ -2,13 +2,13 @@ Python Домашні Завдання
 
 Репозиторій містить виконані домашні роботи з Python відповідно до технічного завдання.
 
-hw_01.py      — Замикання та кешування (Fibonacci)
-hw_02.py      — Генератор чисел і підрахунок суми
-hw_03.py      — CLI-аналізатор лог-файлів
-hw_04.py      — Консольний бот з декоратором
-log_file.txt  — Приклад лог-файлу
+hw_01.py      - Замикання та кешування (Fibonacci)
+hw_02.py      - Генератор чисел і підрахунок суми
+hw_03.py      - CLI-аналізатор лог-файлів
+hw_04.py      - Консольний бот з декоратором
+log_file.txt  - Приклад лог-файлу
 
-Завдання 1 — caching_fibonacci:
+Завдання 1 - caching_fibonacci:
 - Замикання (closure)
 - Рекурсія
 - Кешування через словник
@@ -16,7 +16,7 @@ log_file.txt  — Приклад лог-файлу
 Запуск:
 python hw_01.py
 
-Завдання 2 — generator_numbers / sum_profit:
+Завдання 2 - generator_numbers / sum_profit:
 - Генератор (yield)
 - Пошук дійсних чисел через regex
 - Типізація з Callable
@@ -33,9 +33,9 @@ python hw_02.py
 - Обробка помилок
 Запуск:
 python hw_03.py log_file.txt
-python hw_03.py log_file.txt ERROR (або інший тип помилок)
+python hw_03.py log_file.txt ERROR  (або інший тип помилок)
 
-Завдання 4 — Консольний бот
+Завдання 4 - Консольний бот
 - Команди: add, change, phone, all, hello, exit
 - Декоратор input_error
 - Обробка ValueError, IndexError, KeyError
