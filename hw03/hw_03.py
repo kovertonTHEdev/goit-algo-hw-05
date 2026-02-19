@@ -47,10 +47,12 @@ def filter_logs_by_level(
 
 
 def display_log_counts(counts: dict[str, int]) -> None:
+    levels_order = ["INFO", "DEBUG", "WARNING", "ERROR"]
     print(f"{'Рівень логування':<20} | {'Кількість':<10}")
     print("-" * 20 + " | " + "-" * 10)
-    for level, count in counts.items():
-        print(f"{level:<20} | {count:<10}")
+    for level in levels_order:
+        printing_lvl = counts.get(level, 0)
+        print(f"{level:<20} | {printing_lvl:<10}")
 
 
 def main(file_path: str, users_lvl: str | None) -> None:
