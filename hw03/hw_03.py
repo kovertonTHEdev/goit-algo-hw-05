@@ -2,10 +2,10 @@ import sys
 import os
 from collections import defaultdict
 
-ALLOWED_LVLS = {"INFO", "DEBUG", "ERROR", "WARNING"}
+ALLOWED_LVLS: set[str] = {"INFO", "DEBUG", "WARNING", "ERROR"}
 
 
-def parse_log_line(raw_line):
+def parse_log_line(raw_line: str) -> dict[str, str] | None:
     clean_line = raw_line.strip()
     parts = clean_line.split(maxsplit=3)
     if len(parts) < 4:
@@ -17,7 +17,7 @@ def parse_log_line(raw_line):
     return {"DATE": date, "TIME": time, "LEVEL": level, "DESCRIPTION": msg}
 
 
-def load_logs(file_path):
+def load_logs(file_path: str) -> list[dict[str, str]]:
     logs = []
     try:
         with open(file_path, "r", encoding="UTF-8") as f:
@@ -28,9 +28,10 @@ def load_logs(file_path):
     except PermissionError:
         print("You don't have rights to open this file")
         sys.exit(1)
+    return logs
 
 
-def count_logs_by_level(logs):
+def count_logs_by_level(logs: list[dict[str, str]]) -> dict[str, int]:
     result = defaultdict(int)
     for element in logs:
         level_res = element["LEVEL"]
@@ -39,11 +40,13 @@ def count_logs_by_level(logs):
     return result
 
 
-def filter_logs_by_level(logs, level):
+def filter_logs_by_level(
+    logs: list[dict[str, str]], level: str
+) -> list[dict[str, str]]:
     return [el for el in logs if el["LEVEL"] == level]
 
 
-def display_log_counts(counts):
+def display_log_counts(counts: dict[str, int]) -> None:
     print(f"{'Рівень логування':<20} | {'Кількість':<10}")
     print("-" * 20 + " | " + "-" * 10)
     for level, count in counts.items():
