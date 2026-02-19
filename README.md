@@ -42,6 +42,7 @@ python hw_02.py
 
 Запуск:
 python hw_03.py log_file.txt
+
 python hw_03.py log_file.txt ERROR (або інший тип помилок)
 
 ### hw_04 - Консольний бот
