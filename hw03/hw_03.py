@@ -75,7 +75,7 @@ if len(sys.argv) >= 2:
         print("File not found. Use <file name>")
         sys.exit(1)
 else:
-    print("Invalid Path. Please, use: python general.py log_file.txt")
+    print("Invalid Path. Please, use: python hw_03.py log_file.txt")
     sys.exit(1)
 if len(sys.argv) >= 3:
     users_lvl = sys.argv[2].upper()
