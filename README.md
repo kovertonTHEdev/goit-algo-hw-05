@@ -31,6 +31,7 @@ python hw_02.py
 - Фільтрація за рівнем логування
 - Фіксований порядок виводу
 - Обробка помилок
+
 Запуск:
 python hw_03.py log_file.txt
 python hw_03.py log_file.txt ERROR  (або інший тип помилок)
